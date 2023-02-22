@@ -1,11 +1,18 @@
 #lang racket
 
-;; rewrite triangle to diagonal form
+;; rewrite pascal's triangle into a diagonal shape
+;; now for any three elements that enter into the figure below
+;;  ___
+;; |_ _|
+;;   |_|
+;;
+;; hold true: the sum of the two upper elements is equal to the lower one, 
+;; for example:
 ;; 1
 ;; 1 1
-;; 1 2 1
-;; 1 3 3 1
-;; 1 4 6 4 1
+;; 1 2̲ ̲1̲
+;; 1|3̲ 3̲|1
+;; 1 4|6̲|4 1
 ;; ...
 
 (define (pascal-triangle line elem)
