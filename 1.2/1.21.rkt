@@ -1,8 +1,5 @@
 #lang racket
 
-(define (square n)
-    (* n n))
-
 (define (smallest-divisor n) 
     (find-divisor n 2))
 
@@ -13,6 +10,9 @@
 
 (define (divides? a b) 
     (= (remainder b a) 0))
+
+(define (square n)
+    (* n n))
 
 ;; 199 is prime number
 (smallest-divisor 199)
