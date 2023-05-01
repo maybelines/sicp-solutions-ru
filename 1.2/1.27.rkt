@@ -24,7 +24,8 @@
 (define (square n)
     (* n n))
 
-;Сarmichael numbers: 561, 1105, 1729, 2465, 2821, 6601
+; Сarmichael numbers: 561, 1105, 1729, 2465, 2821, 6601
+; All of them have passed the test below
 (fermat-tests 561 number-of-tests)
 (fermat-tests 1105 number-of-tests)
 (fermat-tests 1729 number-of-tests)

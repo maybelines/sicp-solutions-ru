@@ -31,7 +31,6 @@
 (define (square n)
     (* n n))
 
-;Сarmichael numbers: 561, 1105, 1729, 2465, 2821, 6601
 (miller-rabin-tests 7 number-of-tests)
 (miller-rabin-tests 1009 number-of-tests)
 (miller-rabin-tests 11 number-of-tests)
