@@ -10,8 +10,7 @@
 (define (miller-rabin-single-test n)
     (define (try-it a)
         (= (expmod a (- n 1) n) 1))
-    (define y (+ (random (- n 1)) 1))
-    (try-it y))
+    (try-it (+ (random (- n 1)) 1)))
 
 (define (expmod base exp mod)
     (cond ((= exp 0) 1)
