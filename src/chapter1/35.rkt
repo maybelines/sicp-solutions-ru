@@ -16,4 +16,5 @@
     (fixed-point (lambda (x) (+ 1 (/ 1.0 x))) 
                  1))
 
-(find-golden-ratio)
+; returns #t 
+(< (- 1.6180339887 (find-golden-ratio)) 0.00001)
