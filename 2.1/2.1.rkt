@@ -1,6 +1,6 @@
 #lang racket
 
-;----------middle level of abstraction----------
+; ----------next level of abstraction----------
 (define (add-rat x y)
     (make-rat (+ (* (numer x) (denom y)) (* (numer y) (denom x))) 
               (* (denom x) (denom y))))
@@ -21,10 +21,10 @@
     (= (* (numer x) (denom y)) 
        (* (numer y) (denom x))))
 
-(define (print-rat-safety x)
-    (if (pair? x)
-        (print-rat x)
-        (shows-the-denominator-is-zero-text)))
+(define (print-rat-safely x)
+    (if (false? x)
+        (shows-the-denominator-is-zero-text)
+        (print-rat x)))
 
 (define (print-rat x)
     (display (numer x)) 
@@ -36,7 +36,7 @@
     (display "the denominator must not be a zero")
     (newline))
 
-;----------low level of abstraction----------
+; ----------previous level of abstraction----------
 
 ; upgrade of make-rat procedure for negative numbers and zero
 (define (make-rat n d)
@@ -61,18 +61,18 @@
 
 ; something like tests
 ; expected: 5/16, received: 5/16
-(print-rat-safety (make-rat 25 80))
+(print-rat-safely (make-rat 25 80))
 
 ; expected: 1/2, received: 1/2
-(print-rat-safety (make-rat -15 -30))
+(print-rat-safely (make-rat -15 -30))
 
 ; expected: "the denominator must not be a zero", 
 ; received: "the denominator must not be a zero"
-(print-rat-safety (make-rat 15 0))
+(print-rat-safely (make-rat 15 0))
 
 ; expected: -1/2, received: -1/2
-(print-rat-safety (make-rat 1 -2))
+(print-rat-safely (make-rat 1 -2))
 
 ; expected: 0/1, received: 0/1
-(print-rat-safety (make-rat 0 14273845634563245))
+(print-rat-safely (make-rat 0 14273845634563245))
 
