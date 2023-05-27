@@ -1,6 +1,5 @@
 #lang racket
 
-; ----------next level of abstraction----------
 (define (add-rat x y)
     (make-rat (+ (* (numer x) (denom y)) (* (numer y) (denom x))) 
               (* (denom x) (denom y))))
@@ -32,12 +31,7 @@
     (display (denom x))
     (newline))
 
-(define (shows-the-denominator-is-zero-text)
-    (display "the denominator must not be a zero")
-    (newline))
-
-; ----------previous level of abstraction----------
-
+; ----------abstraction-barrier------------
 ; upgrade of make-rat procedure for negative numbers and zero
 (define (make-rat n d)
     (let ((g (abs (gcd n d)))
@@ -59,6 +53,11 @@
 (define (denom x)
     (cdr x))
 
+(define (shows-the-denominator-is-zero-text)
+    (display "the denominator must not be a zero")
+    (newline))
+    
+; ----------abstraction-barrier------------
 ; something like tests
 ; expected: 5/16, received: 5/16
 (print-rat-safely (make-rat 25 80))
