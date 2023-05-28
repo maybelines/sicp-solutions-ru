@@ -5,8 +5,8 @@
         (cons a b)
         (cons b a)))
 
-(define (upper-bound interval)
+(define (lower-bound interval)
     (car interval))
 
-(define (lower-bound interval)
+(define (upper-bound interval)
     (cdr interval))
