@@ -1,22 +1,6 @@
 #lang racket
 
-;; in my opinion Ben's notice incorrect, the version with nine cases
-;; only one of which requires more than two multiplications is not exist
-
-;; show this:
-;; the first example is case (x1, x2) * (y1, y2) where sign(x1 * x2) = -1 and sign(y1 * y2) = -1
-;; (-1000, 1) * (-1000, 2) = (x1 * y2, x1 * y1) = (-2000, 1000000)
-;; (-10, 10) * (-10, 100) =  (x1 * y2, x2 * y2) = (-1000, 1000)
-;; (-1, 1) * (-2, 1) =       (x2 * y1, x1 * y1) = (-2, 2)
-;; so it means requires at least 3 multiplies
-
-;; the second example is case (x1, x2) * (y1, y2), where sign(x1 * x2) = 1 and sign(y1 * y2) = 1
-;; (-10, -2) * (-100, -3) = (x2 * y2, x1 * y1) = (6, 1000)
-;; (-10, -2) * (2, 10) =    (x1 * y2, x2 * y1) = (-100, -4)
-;; (1, 2) * (2, 3) =        (x1 * y1, x2 * y2) = (2, 6)
-;; so it means requires at least 3 multiplies
-
-;; below is my modest method of reducing the number of multiplications
+;; below is modest method of reducing the number of multiplications
 ;; only in three cases we have to use the old procedure
 ;; in all other cases we use 4 multiplications (excluding muls in the condition)
 
